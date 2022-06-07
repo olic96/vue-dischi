@@ -14,7 +14,6 @@ export default {
 
 <style>
   main {
-    height: 91.8vh;
     background-color: #1e2d3b;
   }
 </style>

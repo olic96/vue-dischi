@@ -2,7 +2,7 @@
   <section>
       <div class="container">
           <div class="row">
-              <CardAlbum v-for="(lp, index) in album" :key="index" :album="album"/>
+              <CardAlbum class="col-2" v-for="(album, index) in albums" :key="index" :album="album"/>
           </div>
       </div>
   </section>
@@ -16,7 +16,7 @@ export default {
     name: 'SectionAlbum',
     data() {
         return {
-           album: [],
+           albums: [],
         };
     },
 
@@ -28,7 +28,8 @@ export default {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
         .then((response) => {
             // handle success
-            this.album = response.data;
+            this.albums = response.data.response;
+            console.log(response.data)
         })
         .catch((error) => {
             // handle error
