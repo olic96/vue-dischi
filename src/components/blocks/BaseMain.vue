@@ -1,13 +1,20 @@
 <template>
-  <main></main>
+  <main>
+    <SectionAlbum/>
+  </main>
 </template>
 
 <script>
+import SectionAlbum from '../sections/SectionAlbum.vue'
 export default {
+  components: { SectionAlbum },
     name: 'BaseMain',
 }
 </script>
 
 <style>
-
+  main {
+    height: 91.8vh;
+    background-color: #1e2d3b;
+  }
 </style>
