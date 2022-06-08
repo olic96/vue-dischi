@@ -1,7 +1,7 @@
 <template>
   <div>
     <label for="genre">Choose a genre:</label>
-        <select name="genre" id="genre" v-model="selectGenre">
+        <select name="genre" id="genre" v-model="selectGenre" @change="$emit('chooseGenre', value)">
             <option value="all">All</option>
             <option value="rock">Rock</option>
             <option value="pop">Pop</option>

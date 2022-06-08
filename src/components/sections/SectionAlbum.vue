@@ -1,9 +1,9 @@
 <template>
   <section>
       <div class="container">
-          <ChooseGenre @select="filterGenre"/>
+          <ChooseGenre @chooseGenre="filterGenre"/>
           <div class="row">
-              <CardAlbum class="col-2" v-for="(album, index) in albums" :key="index" :album="album"/>
+              <CardAlbum class="col-2" v-for="(album, index) in genreFiltered" :key="index" :album="album"/>
           </div>
       </div>
   </section>
@@ -18,7 +18,8 @@ export default {
     name: 'SectionAlbum',
     data() {
         return {
-           albums: [],
+            albums: [],
+            genre:'',
         };
     },
 
@@ -41,10 +42,16 @@ export default {
     },
 
     methods: {
-        filterGenre(select) {
-            this.
+        filterGenre(value) {
+            this.genre = value;
         }
-    }
+    },
+
+    computed: {
+        genreFiltered() {
+            return this.albums.filter((elm) => elm.genre.includes(this.genre));
+        }
+    },
 }
 </script>
 
