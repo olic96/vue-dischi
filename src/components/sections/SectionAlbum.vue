@@ -1,13 +1,7 @@
 <template>
   <section>
       <div class="container">
-          <label for="genre">Choose a genre:</label>
-            <select name="genre" id="genre">
-                <option value="rock">Rock</option>
-                <option value="pop">Pop</option>
-                <option value="metal">Metal</option>
-                <option value="jazz">Jazz</option>
-            </select>
+          <ChooseGenre/>
           <div class="row">
               <CardAlbum class="col-2" v-for="(album, index) in albums" :key="index" :album="album"/>
           </div>
@@ -18,6 +12,7 @@
 <script>
 import axios from 'axios';
 import CardAlbum from '../commons/CardAlbum.vue';
+import ChooseGenre from '../commons/ChooseGenre.vue';
 
 export default {
     name: 'SectionAlbum',
@@ -29,6 +24,7 @@ export default {
 
     components: {
         CardAlbum,
+        ChooseGenre,
     },
 
     created() {
@@ -47,5 +43,8 @@ export default {
 </script>
 
 <style>
-
+    label {
+        color: #fff;
+        padding: 0.3125rem;
+    }
 </style>
