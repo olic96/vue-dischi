@@ -1,7 +1,8 @@
 <template>
   <div>
     <label for="genre">Choose a genre:</label>
-        <select name="genre" id="genre">
+        <select name="genre" id="genre" v-model="selectGenre">
+            <option value="all">All</option>
             <option value="rock">Rock</option>
             <option value="pop">Pop</option>
             <option value="metal">Metal</option>

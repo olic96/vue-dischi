@@ -1,7 +1,7 @@
 <template>
   <section>
       <div class="container">
-          <ChooseGenre/>
+          <ChooseGenre @select="filterGenre"/>
           <div class="row">
               <CardAlbum class="col-2" v-for="(album, index) in albums" :key="index" :album="album"/>
           </div>
@@ -38,6 +38,12 @@ export default {
             // handle error
             console.log(error);
         });
+    },
+
+    methods: {
+        filterGenre(select) {
+            this.
+        }
     }
 }
 </script>
