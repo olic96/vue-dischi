@@ -1,6 +1,13 @@
 <template>
   <section>
       <div class="container">
+          <label for="genre">Choose a genre:</label>
+            <select name="genre" id="genre">
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="metal">Metal</option>
+                <option value="jazz">Jazz</option>
+            </select>
           <div class="row">
               <CardAlbum class="col-2" v-for="(album, index) in albums" :key="index" :album="album"/>
           </div>
