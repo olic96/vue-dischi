@@ -42,8 +42,8 @@ export default {
     },
 
     methods: {
-        filterGenre(value) {
-            this.genre = value;
+        filterGenre(selectGenre) {
+            this.genre = selectGenre;
         }
     },
 
